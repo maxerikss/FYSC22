@@ -1,0 +1,70 @@
+\section{Fourth Exercise}
+\subsection*{(a)} 
+
+\paragraph{Solution:} The reaction that is seen is 
+\begin{equation}
+    n + \nuc{U}{235}{92} \longrightarrow \nuc{U}{236}{92}^* \longrightarrow \mathrm{fission} + \nu n.
+\end{equation}
+The activity is given as
+\begin{equation}
+    A(t) = A_0 e^{-\lambda t},
+\end{equation}
+where $\lambda$ is the decay probability of $\nuc{U}{236}{92}^*$. However, there is only a $ p = \SI{84.0 \pm 0.2}{\percent}$ probability that $\nuc{U}{92}{235}$ absorbs a neutron and turns into  $\nuc{U}{236}{92}^*$ so this factor needs to be accounted for. Since the power output is constant at $\SI{2.2}{\giga\watt} = \SI{1.37e22}{\mev\per\s}$ and every fissile event is $\SI{190 \pm 5}{\mev}$. However, the thermal efficiency of a nuclear power plant is \SI{35(2)}{\percent} so we can calculate the base activity.
+\begin{equation}
+    A_0 = \frac{\mathrm{Power}}{\text{Energy per Fission event}\times \mathrm{Efficiency}} 
+\end{equation}
+The total number of fission events during one year can then be calculated with
+\begin{equation}
+    N_\mathrm{year}^\mathrm{fission} = A_0 \times T_\mathrm{year}
+\end{equation}
+and taking all used $\nuc{U}{235}{92}$ into account we get 
+\begin{equation}
+	 N_\mathrm{year}^\mathrm{total-235} = \frac{N_\mathrm{year}^\mathrm{fission}}{p} = \SI{7.8(5)e27}{}.
+\end{equation}
+From the course literature we know that the mass per nuclide of $\nuc{U}{236}{92}$ is $m(\nuc{U}{236}{92}) = \SI{236.045562}{u} = \SI{3.9e-25}{\kilo\gram}$. This gives the total mass $\nuc{U}{235}{92}$ consumed each year is $M(\nuc{U}{235}{92} / \mathrm{yr}) = N_\mathrm{year}^\mathrm{total-235} \times m(\nuc{U}{236}{92}) = \SI{3040(190)}{\kg}$. Looking up data on the internet one can find that for \SI{1}{\giga\watt} of energy generation for a year about one tonne of $\nuc{U}{235}{92}$ is needed and the calculated value used here is a bit too high. However, some energy is also released from the daughter nuclide's decay as well. The code used for the calculation can be seen in App. \ref{app:4a}
+
+\paragraph{Answer:} The total mass $\nuc{U}{235}{92}$ consumed each year for a constant power generation of \SI{2.2}{\giga\watt} is \SI{3040(190)}{\kg}
+
+
+\subsection*{(b)}
+\paragraph{Solution:} The probability $p_\textrm{f}$ for fission of $\nuc{U}{235}{92}$ can be calculated as 
+\begin{equation}
+	p_\textrm{f} = \frac{\sigma_f (\nuc{U}{235}{92})}{\sigma_a (\nuc{U}{235}{92}) + \sigma_a (\nuc{U}{238}{92})} \na(\nuc{U}{235}{92})
+\end{equation}
+where $\sigma_f$ is the cross-section for fission, $\sigma_a$ is the cross-section for capture of neutrons and NA is the natural abundance. The probability $p_\textrm{c}$ for capture for $\nuc{U}{238}{92}$ can be calculated as
+\begin{equation}
+	p_\textrm{c} = \frac{\sigma_c (\nuc{U}{238}{92})}{\sigma_a (\nuc{U}{235}{92}) + \sigma_a (\nuc{U}{238}{92})} \na(\nuc{U}{238}{92})
+\end{equation}
+The ratio of $\nuc{U}{238}{92}$ capture and $\nuc{U}{235}{92}$ fission is then
+\begin{equation}
+	\xi = \frac{p_\textrm{c}}{p_\textrm{f}} = \frac{\sigma_c (\nuc{U}{238}{92})}{\sigma_f (\nuc{U}{235}{92})} \frac{\na(\nuc{U}{238}{92})}{\na(\nuc{U}{235}{92})} = R \times \frac{\na(\nuc{U}{238}{92})}{\na(\nuc{U}{235}{92})} 
+\end{equation}
+The natural abundance of $\nuc{U}{235}{92}$ and $\nuc{U}{238}{92}$ is $\na(\nuc{U}{235}{92}) = \SI{0.72}{\percent}$ and $\na(\nuc{U}{238}{92}) = \SI{99.28}{\percent}$ respectively. Thus
+\begin{equation}
+	\xi = \SI{0.552(14)}{}
+\end{equation}
+so the number of $\nuc{U}{238}{92}$ nuclides which capture neutrons and turn in to $\nuc{Pu}{239}{94}$ is then
+\begin{equation}
+	N^\textrm{capture-238}_\textrm{year} = N^\textrm{total-235}_\textrm{year} \times \xi = \SI{4.3(3)e27}{}
+\end{equation}
+and the mass per $\nuc{Pu}{239}{94}$ nuclide is $m(\nuc{Pu}{239}{94}) = \SI{239.052157}{u}$ which gives a total mass during a year to $M(\nuc{Pu}{239}{94}) = \SI{1710(120)}{\kg}$. The calculations can be seen in \ref{app:4b}.
+
+\paragraph{Answer:} The total mass $\nuc{Pu}{239}{94}$ produced each year is \SI{1710(120)}{\kg}
+
+\subsection*{(c)}
+\paragraph{Solution:} The activity is calculated as
+\begin{equation}
+	A(t) = A_0 e^{-\lambda t} = \lambda N_0 e^{-\lambda t}
+\end{equation}
+and $\lambda$ can be calculated as $\lambda = \ln{2} / T_{1/2}$ and the total number of $\nuc{Cf}{254}{98}$ nuclides $N_0$ can be calculated as $N_0 = \text{Total mass} / \text{Mass per nuclide}$, and the nuclide mass is $m(\nuc{Cf}{254}{98}) = \SI{254.087317}{u}$. Since the amount of $\nuc{Cf}{254}{98}$ will decrease over time, we can calculate for $t=0$ and the power is $P = \SI{11.3(3)}{\milli\watt}$, and the efficiency of the reactor give $P_\textrm{eff} = \SI{4.0(2)}{\milli\watt}$. The power is very small, but the mass is also incredibly little, so even if it is more active than the uranium the small amount doesn't produce any real energy. The calculations can be seen in App. \ref{app:4cd}
+
+\paragraph{Answer:} The total power generated in the reactor from \SI{1.0}{\micro\gram} of $\nuc{Cf}{254}{98}$ is \SI{4.0(2)}{\milli\watt}.
+
+\subsection*{(d)}
+\paragraph{Solution:} Rise in temperature for a metal can be calculated as 
+\begin{equation}
+	\Delta T = \frac{E}{M(\nuc{Cf}{254}{98}) \times C}.
+\end{equation}
+Since one minute is much less than 60 days, the effect can be though of as constant. The specific heat capacity for $\nuc{Cf}{254}{98}$ is unknown but using the closest nuclide with a known value, Americium, we get $C = \SI{110}{\joule\per\kg\per\kelvin}$. This gives the temperature change in one minute as $\Delta T = \SI{6.18(24)}{\mega\kelvin}$. This value seems unreasonably high. The reason is most likely that we have neglected the heat exchange with the environment  The calculations can be seen in App. \ref{app:4cd}.
+
+\paragraph{Answer:} The theoretical change of temperature in one minute for the  $\nuc{Cf}{254}{98}$ source without heat exchange is \SI{6.18(24)}{\mega\kelvin}

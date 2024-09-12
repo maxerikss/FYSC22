@@ -1,0 +1,58 @@
+\section{Two-State Mixing}
+\subsection*{(a)}
+A diagonal matrix has the eigenvalues in the diagonal, thus by finding the eigenvalues of the matrix
+\begin{equation}
+	\mathcal{M} = \begin{pmatrix}
+		E_1 & V_{12} \\
+		V_{12} & E_2
+	\end{pmatrix}
+\end{equation}
+we get the diagonal matrix. Thus we solve
+\begin{align}
+	\det(\mathcal{M} - \lambda I) = 0 &\iff 
+	\begin{vmatrix}
+		E_1 - \lambda & V_{12}\\
+		V_{12} & E_2 - \lambda
+	\end{vmatrix} = 0 \iff (E_1 - \lambda)(E_2 - \lambda ) - V_{12}^2 = 0\\
+	&\iff \lambda^2  -\lambda (E_1 + E_2) + E_1 E_2 - V_{12}^2 = 0\\
+	&\iff \lambda = \frac{E_1 + E_2}{2} \pm \sqrt{ \frac{E_1^2 - 2 E_1 E_2 + E_2^2 + 4 V_{12}^2}{4}}\\
+	&\iff \lambda = \frac{E_1 + E_2}{2} \pm \frac{\sqrt{(E_1 - E_2)^2 + 4 V_{12}^2}}{2}.
+\end{align}
+And the eigenvalues are $E_I$ and $E_{II}$ while the eigenvectors are the wavefunctions. Thus we have
+\begin{align}
+	E_I &= \frac{E_1 + E_2}{2} - \frac{\sqrt{(E_1 - E_2)^2 + 4V_{12}^2}}{2}\\
+	E_{II} &= \frac{E_1 + E_2}{2} + \frac{\sqrt{(E_1 - E_2)^2 + 4V_{12}^2}}{2}
+\end{align}
+Now we get
+\begin{align}
+	\Delta E_{I;II} &= E_{II} - E_I = \sqrt{(E_1 - E_2)^2 + 4V_{12}^2} = \sqrt{(\Delta E_{12})^2 + 4 \left(\frac{\Delta E_{12}}{R}\right)^2}\\
+	=& \Delta E_{12} \sqrt{1 + \frac{4}{R^2}}
+\end{align}
+QED.
+
+\subsection*{(b)}
+\paragraph{For $\Delta \bm{E_{12}} = \SI{40}{\kilo\electronvolt}$ and $\bm{V_{12}} = \SI{30}{\kilo\electronvolt}$:}
+\begin{equation}
+	\Delta E_{I;II} = \SI{40}{\kilo\electronvolt} \sqrt{1 + 4\frac{(\SI{30}{\kilo\electronvolt})^2}{(\SI{40}{\kilo\electronvolt})^2}} = \SI{72}{\kilo\electronvolt}
+\end{equation}
+and $\Delta E_{I;II} / \Delta E_{12} = 1.8$
+
+\paragraph{For $\Delta \bm{E_{12}} = \SI{40}{\kilo\electronvolt}$ and $\bm{V_{12}} = \SI{100}{\kilo\electronvolt}$:}
+\begin{equation}
+	\Delta E_{I;II} = \SI{40}{\kilo\electronvolt} \sqrt{1 + 4\frac{(\SI{100}{\kilo\electronvolt})^2}{(\SI{40}{\kilo\electronvolt})^2}} = \SI{204}{\kilo\electronvolt}
+\end{equation}
+and $\Delta E_{I;II} / \Delta E_{12} = 5.1$
+
+\paragraph{For $\Delta \bm{E_{12}} = \SI{150}{\kilo\electronvolt}$ and $\bm{V_{12}} = \SI{30}{\kilo\electronvolt}$:}
+\begin{equation}
+	\Delta E_{I;II} = \SI{150}{\kilo\electronvolt} \sqrt{1 + 4\frac{(\SI{30}{\kilo\electronvolt})^2}{(\SI{150}{\kilo\electronvolt})^2}} = \SI{162}{\kilo\electronvolt}
+\end{equation}
+and $\Delta E_{I;II} / \Delta E_{12} = 1.08$
+
+\paragraph{For $\Delta \bm{E_{12}} = \SI{150}{\kilo\electronvolt}$ and $\bm{V_{12}} = \SI{100}{\kilo\electronvolt}$:}
+\begin{equation}
+	\Delta E_{I;II} = \SI{150}{\kilo\electronvolt} \sqrt{1 + 4\frac{(\SI{100}{\kilo\electronvolt})^2}{(\SI{150}{\kilo\electronvolt})^2}} = \SI{250}{\kilo\electronvolt}
+\end{equation}
+and $\Delta E_{I;II} / \Delta E_{12} = 1.67$
+
+\paragraph{Discussion:} The more energetic the interaction the larger the energy gap is afterwards. When the energy gap is about the same size as the interaction energy the energy difference afterwards is about double.

@@ -1,0 +1,34 @@
+\section{Activity reminder}
+\subsection*{(a)}
+\paragraph{Solution:} Assuming the person is standing facing the radioactive source. The area of the person that is in line of sight of the source can be estimated to \SI[]{1}{\m\squared}. The source is radiating omnidirectionally thus the area of the sphere with radius $x$ is $A = 4\pi x^2$ and the effective dosage is proportional to the area of the human to the area of the sphere. Thus the ratio of total radiation hitting the person is $R = 1/(4\pi x^2)$.  The mass of the person can be estimated to be \SI[]{70}{\kg}. Converting $\SI[]{2}{\micro Ci} = \SI[]{74}{\kilo\bq}$, $\SI[]{0.5}{MeV } = \SI[]{8.01e-14}{\joule}$ and $\SI[]{8}{h} = \SI[]{28800}{\second}$, we can then calculate the dose to
+\begin{equation}
+	D = \frac{\SI[]{74}{\kilo\bq} \times \SI[]{28800}{\second} \times \SI[]{8.01e-14}{\joule}}{\SI[]{70}{\kg} \times 4\pi x^2}
+\end{equation}
+for $x_1 = \SI[]{1}{\meter}$ we get $D_1 = \SI[]{194}{\nano\gray}$ and for $x_2 = \SI[]{4}{\meter}$ we get $D_4 = \SI[]{12.1}{\nano\gray}$. For $\gamma$ the quality factor is 1. thus we get $DE_1 = \SI[]{194}{\nano\sievert}$ and $DE_4 = \SI[]{12.1}{\nano\sievert}$.
+
+\paragraph{Answer:} We get the dose to  $D_1 = \SI[]{194}{\nano\gray}$ and $D_4 = \SI[]{12.1}{\nano\gray}$. And the equivalent dose to $DE_1 = \SI[]{194}{\nano\sievert}$ and $DE_4 = \SI[]{12.1}{\nano\sievert}$.
+
+\subsection*{(b)}
+\paragraph{Solution:} 
+
+\begin{table}[H]
+	\centering
+	\caption[]{Natural abundance and half-life of relevant isotopes.}
+	\begin{tabular}{lll}
+		\toprule
+			\textbf{Isotope}	& \textbf{Natural Abundance}	& \textbf{Half-Life}\\
+		\midrule
+			$\nuc{C}{14}$			& $10^{-12}$					& \SI[]{5730(40)}{yr}\\
+			$\nuc{K}{40}$			& $0.000117$					& $\SI[]{1.277(8)e9}{yr}$\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Assuming we have the same person at \SI[]{70}{\kg}, the mass of carbon is \SI[]{14}{\kg} and the mass of potassium is \SI[]{0.175}{\kg}. The number of $\nuc{C}{14}$ in the body is $N(\nuc{C}{14}) = (\SI[]{14}{\kg} \times 10^{-12})/(\SI{14}{u} \times \SI{1.66e-27}{\kg\per\u}) = 6.02 \times 10^{14}$. Thus the activity is $A(\nuc{C}{14}) = N \ln{2}/T_{1/2} = \SI{2308(16)}{\bq}$. Similarly for $\nuc{K}{40}$ the total number of nuclides in the body is $N(\nuc{K}{40}) = (\SI[]{0.175}{\kg} \times 0.000117)/(\SI{40}{\u} \times \SI{1.66e-27}{\kg\per\u}) = 3.08 \times 10^{20}$. The total activity for $\nuc{K}{40}$ is then $A(\nuc{K}{40}) = N \ln{2}/T_{1/2} = \SI{5298(33)}{\bq}$. Assuming that the excited $\nuc{Ar}{40}$ state decays instantly we get that $A(\nuc{Ar}{40}) = 0.11 \times A(\nuc{K}{40}) = \SI{583(4)}{\bq}$. The total activity is $A =  A(\nuc{C}{14}) + A(\nuc{K}{40}) + A(\nuc{Ar}{40}) = \SI{8190(40)}{\bq}$
+
+\paragraph{Answer:} The total intrinsic activity is $A = \SI{8190(40)}{\bq}$
+
+\subsection*{(c)}
+\paragraph{Solution:} Since the half-life is much longer than a year and since we eat and therefore replenish the supply of $\nuc{C}{14}$ and $\nuc{K}{40}$ we can assume that the activity is constant and that all radiation is absorbed by the person. The we can calculate the dose as $D = \text{Absorbed energy} / \text{mass}$, which gives us $D(\nuc{C}{14}) = \SI{26.67(19)}{\micro\gray}$, $D(\nuc{K}{40} \to \nuc{Ca}{40}) = \SI{442.7(28)}{\micro\gray}$, and $D(\nuc{K}{40} \to \nuc{Ar}{40}) = \SI{61.5(4)}{\micro\gray}$. The total dose is therefore $D = \SI{530.8(32)}{\micro\gray}$. Since all radiation is either $\beta^-$ or $\gamma$ the quality factor is 1 for all radiation, and thus the dose equivalent is $DE = \SI{530.8(32)}{\micro\sievert}$.
+
+\paragraph{Answer:} The total dose absorbed during one year from intrinsic radiation is $D = \SI{530.8(32)}{\micro\gray}$ and the total dose equivalent is  $DE = \SI{530.8(32)}{\micro\sievert}$.

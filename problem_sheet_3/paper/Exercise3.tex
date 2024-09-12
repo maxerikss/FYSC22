@@ -1,0 +1,24 @@
+\section{Thermal Neutron Flux}
+The reaction rate $n + \nuc{In}{115} \to \nuc{In}{116}$ can be described with
+\begin{equation}
+	r = n V \sigma \Phi,\label{eq:rate}
+\end{equation}
+where $r$ is the reaction rate in reactions per second, $n$ is the number of particles per unit volume, $V$ is the volume of the target, $\sigma$ is the capture cross-section, and $\Phi$ is the neutron flux.
+We are given $\sigma = \SI{160}{b}$ and can easily calculate $V = \text{thickness} \times \text{area} = \SI{9e-6}{\cubic\centi\m}$. The number of $\nuc{In}{115}$ per unit volume can be calculated from the density as 
+\begin{equation}
+	n = \frac{\rho}{m}
+\end{equation}
+and the density is $\rho_\mathrm{In} = \SI{7.3}{\gram\per\cubic\centi\meter}$ and the atomic mass is $m_\mathrm{In} = \SI{1.9e22}{\gram}$. Thus $n_\mathrm{In} = \SI{3.8e22}{\per\cubic\centi\m}$.
+
+To calculate the reaction rate we can use the total number of counts as well as the decay formula. The total number of counts is 
+\begin{equation}
+	\text{Counts} = \epsilon \int_{\SI{15}{min}}^{\SI{75}{min}} N_0 e^{-(\ln 2) t / T_{1/2}} \dd t.
+\end{equation}
+Since $N_0$ is the total number of radioactive isotopes, we can assume that it equals the number of $n + \nuc{In}{115} \to \nuc{In}{116}$ reactions. Solving the equation for $N_0$ gives 
+\begin{equation}
+	N_0 = \frac{\text{Counts}}{\epsilon \int_{\SI{15}{min}}^{\SI{75}{min}} e^{-(\ln 2) t / T_{1/2}} \dd t}
+\end{equation}
+using the half-life $T_{1/2} = \SI{54}{min}$ and calculating with python gives about $N_0 = \SI{4.8e6}{}$. That gives a reaction rate of $r = N_0 / \SI{1}{min} = \SI{80000}{\per\s}$. Solving Eq. \eqref{eq:rate} for $\Phi$ we get
+\begin{equation}
+	\Phi = \frac{r}{n V \sigma} = \frac{\SI{80000}{\per\s}}{\SI{3.8e22}{\per\cubic\centi\m} \times \SI{9e-6}{\cubic\centi\m} \times \SI{160}{b}} = \SI{1.5e9}{\per\centi\m\squared\per\s}
+\end{equation}
